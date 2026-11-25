@@ -1,8 +1,4 @@
-#include "base.h"
-
-int collatz(int n){
-
-    /*int gerade = n % 2 == 0;         in C Assignment is =
+ /* int gerade = n % 2 == 0;         in C Assignment is =
                                        in C == lit. means Boolean not assign.
     int ungerade = n % 2 == 1;         so do not write == for assign. 
                                        just simply write = 
@@ -14,6 +10,13 @@ int collatz(int n){
     int result;
     
     */
+
+
+#include "base.h"
+
+int collatz(int n){
+
+   
      
     while (n > 0)
 
