@@ -1,64 +1,60 @@
- /* int gerade = n % 2 == 0;         in C Assignment is =
-                                       in C == lit. means Boolean not assign.
-    int ungerade = n % 2 == 1;         so do not write == for assign. 
-                                       just simply write = 
-                                       otherwise C will check the Boolean outcome,
-                                       for ex. if n = 8 , n % 2 == 0 is true not the value of 0 
-                                       so basically it means true (1)
-                                       actually it was correct but i have calculated in a wrong place
-                                      
-    int result;
-    
-    */
-
-
 #include "base.h"
 
-int collatz(int n){
-
-   
+int collatz(int n) {                          // we declared a function and integer called n, 
      
-    while (n > 0)
+    while (n > 1) {                           // the problem statement is this:                
 
-    int is_gerade = n % 2 == 1;
+                                              // if the number reaches 1 -> Stop 
 
-    int is_ungerade = n % 2 == 0;
-    {
-        
+    int is_gerade = n % 2 == 0;                /* we declare two booleans one is is_gerade
+                                                  one is_ungerade!  */            
+
+    int is_ungerade = n % 2 == 1;
+
+    
+        /* Actually I have overthought this part
+           we have  two types for our n
+           one is gerade and the other one is ungerade
+           if gerade = DO THIS = n / 2 
+           if ungerade = DO THIS = 3 * n + 1 
+           actually, you do not need another int result; here
+           that was my fault. you just assign a new value to 
+           the old n like this: n = n / 2; 
+           translated --> n = (n / 2)
+           so the new could be either gerade or ungerade....
+           */
 
         if (is_gerade)
         {
-            result = n / 2;            // the compiler should save the n / 2 part in
-                                       // some place anyways! 
-                                       // now we have our n that is divided by 2 somewhere = result!
-            
-            
-        }
-        
-        else if (result == is_gerade)
-        {
-            result = result / 2;       //same as here, we have saved our result again somewhere!
+            n = n / 2;
+                                                // the compiler should save the n / 2 part in
+                                                // some place anyways! 
+                                                // now we have our n that is divided by 2 somewhere = result!
+                                                /* the lines above was my fault !!!
+                                                we do not need a new result we just assigned a new n inside the n
+                                                also, the if statement can be two, if and else if
+                                                the program goes and scans the new n till it reaches one!*/
             
         }
 
-        else if (result == is_ungerade)
+        else if (is_ungerade)
         {
-            result = result * 3 + 1; 
-            
+
+            n = n * 3 + 1;
+
         }
 
-        else if (result == 1)
-        {
-            break;
-        }
+        printf(" -> %d" , n);
         
     }
     
-    return 0;
+    printf("\n");
 
 }
 
-int main(void){
-    collatz(7); 
+int main(void) {
+
+    collatz(3);
+
     return 0; 
 }
