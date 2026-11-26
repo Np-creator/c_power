@@ -52,9 +52,16 @@ int collatz(int n) {                          // we declared a function and inte
 
 }
 
+int next() {
+
+    return 0; 
+}
+
+
 int main(void) {
 
     collatz(3);
 
     return 0; 
 }
+
