@@ -83,6 +83,8 @@ int main(void) {
     collatz(1);
     collatz(8);
     collatz(5);
+    collatz(2);
+    collatz(100);
     
     return 0; 
 }

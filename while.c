@@ -54,6 +54,36 @@ int sum_uneven(int stop_point){
 }            
 
 
+int factoriel(){                                 // name of the function
+                                                 // inside the () is nothing
+    int user_num;                                // we want user to put an integer
+    long long result_factoriel = 1;              // user input is an integer
+                                                 // the factoriel part is long long in order to save
+    printf("Enter a number: ");                  // more than 12. bit integers 
+
+    scanf("%d", &user_num);                     // user inputs a number
+
+    if (user_num < 0)                           // must be bigger than 0; 
+    {
+        printf("Invalid Input");                // if it is smaller then we print "Error" 
+        return 1; 
+    }
+    
+    while (user_num > 0)                        // continue the loop till the number reaches 1; 
+    {
+
+        result_factoriel *= user_num;          // %lld or long must be multipied with user integer
+
+        user_num --;                           // user number is reduced by one and multipied again to %lld
+        
+    }
+
+    return result_factoriel;               // the value is stored inside %lld factoriel so we save it 
+    
+
+}
+
+
 
 
 
@@ -65,6 +95,7 @@ void test_sum() {
     test_equal_i(sum(4), 6);
     test_equal_i(sum(12), 42);
     test_equal_i(sum(439), 1289);
+    //test_equal_i(factoriel(5), 120);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -77,5 +108,6 @@ void test_sum() {
 int main(void){
     test_sum();
     printf("\nSum of uneven number 0-100 is %d \n", sum_uneven(100));
+    printf("\nFactoriel of your number is: %lld \n", factoriel());
     return 0; 
 }
