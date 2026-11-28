@@ -121,6 +121,29 @@ int count_digits() {
 }
 
 
+int count_digits_sum(){
+
+    int digit_input;                                    
+    int count = 0;
+    int sum = 0;
+    
+    
+    printf("Enter your number: ");
+    scanf("%d", &digit_input);
+
+    while (digit_input > 0)                              
+    
+    {                                                                                                   
+        
+        digit_input = digit_input /10;
+        count ++; 
+        sum = sum + count;                                       
+                                                                                                                   
+    }
+
+    return sum;
+
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////  ### TEST ###  /////////////////////////////////////////////
@@ -152,5 +175,6 @@ int main(void){
     printf("\nSum of uneven number 0-100 is %d \n", sum_uneven(100));
     printf("\nFactoriel of your number is: %lld \n", factoriel());
     printf("\nDigit number of your number is %d\n", count_digits());
+    printf("\nSum of the digits is %d\n",count_digits_sum());
     return 0; 
 }
