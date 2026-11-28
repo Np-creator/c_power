@@ -9,7 +9,11 @@ int collatz(int n) {                          // we declared a function and inte
     int is_gerade = n % 2 == 0;                /* we declare two booleans one is is_gerade
                                                   one is_ungerade!  */            
 
-    int is_ungerade = n % 2 == 1;
+    int is_ungerade = n % 2 == 1;             // learning the mistakes
+                                              // what does the line of code means: 
+                                              // it means is_gerade must exactly be = 0 and it is NOT 
+                                              // assigned to 0!               
+
 
     
         /* Actually I have overthought this part
@@ -52,16 +56,36 @@ int collatz(int n) {                          // we declared a function and inte
 
 }
 
-int next() {
+int next(int biggest_num) {
+
+    
 
     return 0; 
+
 }
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// #### TEST #### ///////////////////////////////////////////////////////
 
 
 int main(void) {
 
     collatz(3);
-
+    collatz(12);
+    collatz(1);
+    collatz(8);
+    collatz(5);
+    
     return 0; 
 }
+
+
 
