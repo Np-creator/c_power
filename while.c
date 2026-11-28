@@ -21,6 +21,13 @@ int sum(int n) {
     return result;
 }
 
+
+
+
+
+
+
+
 /* #### my idea ###
 
    lvl 1:
@@ -54,6 +61,11 @@ int sum_uneven(int stop_point){
 }            
 
 
+
+
+
+
+
 int factoriel(){                                 // name of the function
                                                  // inside the () is nothing
     int user_num;                                // we want user to put an integer
@@ -85,6 +97,29 @@ int factoriel(){                                 // name of the function
 
 
 
+int count_digits() {
+
+    int digit_input;                                     // we ask the user to input a number
+    int count = 0;
+                                                         // ### we declared an integer which is 0; ### 
+    printf("Enter your number: ");
+    scanf("%d", &digit_input);
+
+    while (digit_input > 0)                              // when the digit input is bigger than 0 
+    
+    {                                                    // for ex: 100 / 10 = 10
+                                                         //         10 / 10  = 1 & ...
+        
+        digit_input = digit_input /10;
+        count ++;                                        // take the user num and  /10
+                                                         // repeat it till ...? 
+                                                         // till the digit /10 is reached 0;         
+    }
+
+    return count;                                        // you got the whole idea right but overthinking is bad
+
+}
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -95,11 +130,18 @@ void test_sum() {
     test_equal_i(sum(4), 6);
     test_equal_i(sum(12), 42);
     test_equal_i(sum(439), 1289);
-    //test_equal_i(factoriel(5), 120);
+    //test_equal_i(factoriel(5),120);
+    test_equal_i(count_digits(),12);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -109,5 +151,6 @@ int main(void){
     test_sum();
     printf("\nSum of uneven number 0-100 is %d \n", sum_uneven(100));
     printf("\nFactoriel of your number is: %lld \n", factoriel());
+    printf("\nDigit number of your number is %d\n", count_digits());
     return 0; 
 }
